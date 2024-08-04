@@ -34,7 +34,6 @@ Graphics.drawFps = function(fps) {
     //Graphics.context.fillRect(0,0,200,100);
     Graphics.context.font = "15px Arial";
     Graphics.context.fillText(`${fps} fps`, 10, 30);
-    Graphics.context.fillText(`Heading: ${Game.camera.theta}`, 80, 30)
 }
 
 Graphics.background = function(colour = Graphics.bg) {

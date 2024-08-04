@@ -33,6 +33,7 @@ App.gameLoop = function(timeStamp) {
 
         let fps = Math.round(1000 / App.dt);
 
+        Graphics.background();
         Graphics.drawFps(fps);
         App.frames++;
 
