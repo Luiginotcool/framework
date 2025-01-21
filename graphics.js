@@ -1,5 +1,11 @@
 Graphics = {}
 
+Graphics.init = function(canvas) {
+    Graphics.context = canvas.getContext("2d");
+    Graphics.fg = "black"
+    Graphics.bg = "#248796"
+}
+
 Graphics.drawArrow = function(startX, startY, endX, endY, arrowSize) {
     var context = Graphics.context;
     context.fillStyle = Graphics.fg
@@ -33,7 +39,7 @@ Graphics.drawFps = function(fps) {
     Graphics.context.fillStyle = "white";
     //Graphics.context.fillRect(0,0,200,100);
     Graphics.context.font = "15px Arial";
-    Graphics.context.fillText(`${fps} fps`, 10, 30);
+    Graphics.context.fillText(`${fps.toString().substring(0, 3)} fps`, 10, 30);
 }
 
 Graphics.background = function(colour = Graphics.bg) {
@@ -50,7 +56,7 @@ Graphics.drawCircle = function(x, y, radius, fill, stroke, strokeWidth) {
     let ctx = Graphics.context
     ctx.beginPath()
     ctx.arc(x, y, radius, 0, 2 * Math.PI, false)
-    if (fill) {
+    if (fill != null) {
       ctx.fillStyle = fill
       ctx.fill()
     }
